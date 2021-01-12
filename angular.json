@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -66,7 +67,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "maayaavi:build",
-	    "host": "0.0.0.0",
+            "host": "0.0.0.0",
             "port": 80
           },
           "configurations": {
@@ -93,6 +94,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -126,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "maayaavi"
+  "defaultProject": "maayaavi",
+  "cli": {
+    "analytics": "7aafb06f-4a06-4d2b-8d1e-dd4ae1d9753b"
+  }
 }

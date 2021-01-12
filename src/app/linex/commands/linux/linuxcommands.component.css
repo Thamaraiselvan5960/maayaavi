@@ -1,0 +1,21 @@
+.linux-container{
+	background-color: ;
+}
+
+span{
+	color: orange;
+	line-height: 1.5;
+}
+mat-card{
+	
+	width: 75vw;
+	margin: auto;
+}
+@media screen and (max-width: 650px){
+	.command{
+		width:calc(75vw - 36px);
+	}
+	.mat-card{
+		width:85vw;
+	}
+}

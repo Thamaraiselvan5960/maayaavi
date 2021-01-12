@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'maayaavi';
+
+	title = 'Toms tutorial';
+	mode:any = 'over';
+	primary = '#1f85de';
+	secondary = '#dadfea';
+	button = '#de781f';
 }

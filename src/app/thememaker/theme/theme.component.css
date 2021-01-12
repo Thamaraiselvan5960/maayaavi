@@ -1,0 +1,21 @@
+.chip-container{
+	box-sizing: border-box;
+	padding: 20px;
+	max-width:calc(100vw - 40px);
+}
+.brand-colors{
+	box-sizing: border-box;
+	max-width: calc(100vw - 20px);
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.brand-colors img{
+	width:calc(47vw - 20px);
+}
+
+@media screen and (max-width:592px){
+
+}
+

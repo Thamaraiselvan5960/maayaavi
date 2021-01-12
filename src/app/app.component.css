@@ -1,0 +1,35 @@
+.example-container {
+width: calc(100vw - 5px);
+/*width: 100vw;*/
+min-height: 100vh;
+}
+
+
+mat-drawer-content {
+ /* padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;*/
+}
+mat-drawer{
+	width: 30vw;
+	padding: 10px;
+}
+#header{
+	display: flex;
+	justify-content: space-between;
+}
+#small-screen{
+	display:none;
+}
+#large-screen{
+	display: flex;
+}
+@media screen and (max-width: 650px){
+#small-screen{
+	display:block;
+}
+#large-screen{
+	display: none;
+}
+}
