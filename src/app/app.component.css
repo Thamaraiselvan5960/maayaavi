@@ -1,5 +1,5 @@
 .example-container {
-width: calc(100vw - 5px);
+width: calc(99vw - 5px);
 /*width: 100vw;*/
 min-height: 100vh;
 }

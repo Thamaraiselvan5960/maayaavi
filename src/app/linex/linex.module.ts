@@ -10,9 +10,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { GitcommandsComponent } from './commands/git/gitcommands.component';
+import { AwsComponent } from './aws/aws.component';
 
 @NgModule({
-  declarations: [LinuxcommandsComponent, GitcommandsComponent],
+  declarations: [LinuxcommandsComponent, GitcommandsComponent, AwsComponent],
   imports: [
 	  CommonModule, MatButtonModule, MatToolbarModule, MatCardModule, MatSidenavModule, MatFormFieldModule,
 	  MatInputModule, FormsModule 

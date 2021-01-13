@@ -32,6 +32,14 @@
                    About Git Commands
                 </button>
             </mat-menu> 
+            <button mat-button [matMenuTriggerFor]='aws'>
+                AWS
+            </button>
+            <mat-menu #aws="matMenu" yPosition="below">
+                <button mat-button routerLink="aws">
+                   Register SSH in PC
+                </button>
+            </mat-menu>
     </mat-drawer>
     <mat-drawer-content>
         <mat-toolbar [style.background-color] = "primary" id="header">
@@ -74,6 +82,14 @@
             <mat-menu #git="matMenu" yPosition="below">
                 <button mat-button routerLink="git">
                    About Git Commands
+                </button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]='aws'>
+                AWS
+            </button>
+            <mat-menu #aws="matMenu" yPosition="below">
+                <button mat-button routerLink="aws">
+                   Register SSH in PC
                 </button>
             </mat-menu>
         </mat-toolbar>
