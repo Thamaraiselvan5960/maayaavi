@@ -1,0 +1,66 @@
+<div class="ssh-login">
+	<div class="menu-container">
+		
+	</div>
+	<div class="content-container">
+		<mat-toolbar>Agenda</mat-toolbar>
+		<mat-toolbar>SSH Configuration in PC</mat-toolbar>
+		<p class="command">ssh</p>
+		<p>Use this command to login to your linux.</p>
+		<p class="command">ssh -i tomtheevilcat.pem ubuntu@ec2-18-188-44-210.us-east-2.compute.amazonaws.com</p>
+		<p>here <b>apt</b> command used in below.Because of linux os is ubuntu.for other linux os use similar commands instead of <b>apt</b></p>
+		<p class="command">sudo apt update</p>
+		<p class="command">sudo apt upgrade</p>
+		<p>Do you want to continue? [Y/n].put Y to continue upgradation.</p>
+		<mat-toolbar>Activate Http and HTTPS</mat-toolbar>
+		<p class="command">ufw show</p>
+		<p>this will show all commands in firewall</p>
+		<p class="command">ufw show</p>
+
+		<p>use below command to check os firewall status.</p><p><b>Firewall states.1.active 2.inactive</b></p>
+		<p class="command">sudo ufw status</p>
+		<p>To switch user to root use below command.</p>
+		<p class="command">sudo su</p>
+		<p>Below command will change firewall state to <b>active.</b></p>
+		<p class="command">ufw enable</p>
+		<p>Then Press <b>y</b> to continue.</p>
+		<p>Below two commands will enable port 80 and 443.</p>
+		<p class="command">ufw allow http</p>
+		<p class="command">ufw allow https</p>
+		<p>Use following command to know http and https permission activation status.</p>
+		<p class="command">ufw status</p>
+		<p>Use this command to logout from linux.</p>
+		<p class="command">logout</p>
+
+		<mat-toolbar>Execute a Simple Application in python</mat-toolbar>
+		<p>Use this command to login to your linux.</p>
+		<p class="command">ssh -i tomtheevilcat.pem ubuntu@ec2-18-188-44-210.us-east-2.compute.amazonaws.com</p>
+		<p>Check python is available by put this command</p>
+		<p class="command"> sudo python3</p>
+		<p class="command">pip3</p>
+		<p>if not available, Then</p>
+		<p class="command">sudo apt install python3-pip</p>
+		<p class="command">sudo su</p>
+		<p class="command">pip3 install flask</p>
+		<p class="command">python3</p>
+		<p>hit enter to launch python,this will launch python shell in linux server.</p>
+		<p>then copy paste the following code line by line in your server's python shell</p>
+		<mat-card>
+			<p>import flask</p>
+			<p>app = flask.Flask(__name__)</p>
+			<p>app.run(host='0.0.0.0',port=80))</p>
+		</mat-card>
+		<p>This will run Flask App in your server.</p>
+		<p> press <b>Ctrl+c</b> to stop flask.</p> 
+		<p>vs -ef</p>
+		<p>sudo kill id.</p>
+
+
+		<mat-toolbar>Connect GitHub to Web-server</mat-toolbar>
+
+		<p class="command"></p>
+		<p class="command"></p>
+		<p class="command"></p>
+
+	</div>
+</div>

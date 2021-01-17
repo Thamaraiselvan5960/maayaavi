@@ -1,5 +1,6 @@
+<!-- for mobile -->
 <mat-drawer-container class="example-container" hasBackdrop="'true'">
-    <mat-drawer #drawer [mode]="mode">
+     <mat-drawer #drawer [mode]="mode">
        <button mat-button [matMenuTriggerFor]='courses'>
                 Tutorials
             </button>
@@ -7,6 +8,7 @@
                 <button mat-button routerLink="devcolor">
                     Python
                 </button>
+                
             </mat-menu>
             <button mat-button [matMenuTriggerFor]='fordevelopper'>
                 For Developpers
@@ -15,9 +17,12 @@
                 <button mat-button routerLink="devcolor">
                     About Background colors
                 </button>
+                <button mat-button routerLink="prism">
+                    Prismjs
+                </button>
             </mat-menu>
             <button mat-button [matMenuTriggerFor]='os'>
-                For Developpers
+                OS
             </button>
             <mat-menu #os="matMenu" yPosition="below">
                 <button mat-button routerLink="linux">
@@ -25,10 +30,10 @@
                 </button>
             </mat-menu> 
             <button mat-button [matMenuTriggerFor]='git'>
-                For Developpers
+                Git/version Control System
             </button>
             <mat-menu #git="matMenu" yPosition="below">
-                <button mat-button routerLink="linux">
+                <button mat-button routerLink="git">
                    About Git Commands
                 </button>
             </mat-menu> 
@@ -40,7 +45,32 @@
                    Register SSH in PC
                 </button>
             </mat-menu>
+            <button mat-button [matMenuTriggerFor]='ssh'>
+                SSH
+            </button>
+            <mat-menu #ssh="matMenu" yPosition="below">
+                <button mat-button routerLink="ssh">
+                   SSH
+                </button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]='electron'>
+                ElectronJs
+            </button>
+            <mat-menu #electron="matMenu" yPosition="below">
+                <button mat-button routerLink="electronjs">
+                   Electron Intro
+                </button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]='boto'>
+                Boto3
+            </button>
+            <mat-menu #boto="matMenu" yPosition="below">
+                <button mat-button routerLink="boto3">
+                   Boto3 Intro
+                </button>
+            </mat-menu>
     </mat-drawer>
+<!-- main container -->
     <mat-drawer-content>
         <mat-toolbar [style.background-color] = "primary" id="header">
             <a routerLink=''>
@@ -92,8 +122,34 @@
                    Register SSH in PC
                 </button>
             </mat-menu>
+             <button mat-button [matMenuTriggerFor]='ssh'>
+                SSH
+            </button>
+            <mat-menu #ssh="matMenu" yPosition="below">
+                <button mat-button routerLink="ssh">
+                   SSH
+                </button>
+            </mat-menu> 
+            <button mat-button [matMenuTriggerFor]='electron'>
+                ElectronJs
+            </button>
+            <mat-menu #electron="matMenu" yPosition="below">
+                <button mat-button routerLink="electronjs">
+                   Electron Intro
+                </button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]='boto'>
+                Boto3
+            </button>
+            <mat-menu #boto="matMenu" yPosition="below">
+                <button mat-button routerLink="boto3">
+                   Boto3 Intro
+                </button>
+            </mat-menu>
         </mat-toolbar>
         <router-outlet></router-outlet>
     </mat-drawer-content>
+
 </mat-drawer-container>
+
 

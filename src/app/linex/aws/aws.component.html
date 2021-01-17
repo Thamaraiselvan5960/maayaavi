@@ -1,44 +1,13 @@
 <div class="aws-container">
-	<mat-toolbar>SSH Configuration in PC</mat-toolbar>
-	<p class="command">ssh</p>
-	<p>Use this command to login to your linux.</p>
-	<p class="command">ssh -i tomtheevilcat.pem ubuntu@ec2-18-188-44-210.us-east-2.compute.amazonaws.com</p>
-	<p class="command">sudo apt update</p>
-	<p class="command">sudo apt upgrade</p>
-	<p>Do you want to continue? [Y/n].put Y to continue upgradation.</p>
-	<mat-toolbar>Activate Http and HTTPS</mat-toolbar>
-	<p class="command">ufw show</p>
-	<p>this will show all commands in firewall</p>
-	<p class="command">ufw show</p>
-	<p class="command">sudo ufw status</p>
-	<p class="command">sudo su</p>
-	<p class="command">ufw enable</p>
-	<p>Press <b>y</b> to continue.</p>
-	<p class="command">ufw allow http</p>
-	<p class="command">ufw allow https</p>
-	<p>Use following command to know http and https permission activation status.</p>
-	<p class="command">ufw status</p>
-	<p>Use this command to logout from linux.</p>
-	<p class="command">logout</p>
+	<div class="menu-container">
+		<a routerLink="awsintro" (click)="content='intro'">Introduction</a><br>
+		<a routerLink="awsssh" (click)="content='ssh'">SSH login</a><br>
+	</div>
+	<div class="content-container">
 
-	<mat-toolbar>Execute a Simple Application in python</mat-toolbar>
-	<p>Use this command to login to your linux.</p>
-	<p class="command">ssh -i tomtheevilcat.pem ubuntu@ec2-18-188-44-210.us-east-2.compute.amazonaws.com</p>
-	<p>Check python is available by put this command</p>
-	<p class="command"> sudo python3</p>
-	<p class="command">pip3</p>
-	<p>if not available, Then</p>
-	<p class="command">sudo apt install python3-pip</p>
-	<p class="command">sudo su</p>
-	<p class="command">pip3 install flask</p>
-	<p class="command">python3</p>
-	<p>hit enter to launch python</p>
-	<mat-card>
-		import flask
-		app = flask.Flask(__name__)
-		app.run(host='0.0.0.0',port=80))
-	</mat-card>
-	<p class="command"></p>
-	<p class="command"></p>
-	<p class="command"></p>
+		<app-awsintro *ngIf="content== 'intro' "></app-awsintro>
+		
+		<app-awsssh-login *ngIf="content== 'ssh' "></app-awsssh-login>
+		
+	</div>	
 </div>

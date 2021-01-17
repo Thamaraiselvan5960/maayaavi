@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ThemeComponent } from './thememaker/theme/theme.component';
 import { LinexModule } from './linex/linex.module';
 
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -25,11 +24,9 @@ import { FormsModule } from '@angular/forms';
 
 
 
-
 @NgModule({
   declarations: [
-    AppComponent,
-    ThemeComponent
+    AppComponent
   ],
  imports: [
 	 BrowserModule, AppRoutingModule, LinexModule,
@@ -40,11 +37,11 @@ import { FormsModule } from '@angular/forms';
 	MatListModule,
 	MatChipsModule,
 	MatMenuModule,
-	 MatSidenavModule,
+	MatSidenavModule,
 	BrowserAnimationsModule,
 	MatFormFieldModule, MatInputModule, FormsModule
   ],
-  providers: [],
+  // providers: [],
   bootstrap: [AppComponent],
 	exports: []
 })

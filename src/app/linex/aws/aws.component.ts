@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aws.component.css']
 })
 export class AwsComponent implements OnInit {
-
+	content="intro";
   constructor() { }
 
   ngOnInit(): void {

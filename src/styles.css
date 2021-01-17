@@ -1,3 +1,6 @@
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
+
 /* You can add global styles to this file, and also import other style files */
 *{
 	margin: 0;
@@ -10,8 +13,26 @@ a{
 h1{
 	
 }
-html, body { min-height: 100%; max-width:calc( 100vw - 15px);}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+	overflow-x: hidden;
+	min-height: 100vh;
+}
+body { 
+	margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.aws-container, .theme-container, .git-container, .linux-container, 
+.electronjs-container, .prism-container, .ssh-container, .boto3-container{
+	display: flex;
+}
+.menu-container{
+	width: 20vw;
+	background: #dadfea;
+}
+.content-container{
+	width: calc(80vw - 60px);
+	padding: 0px 30px;
+}
+
 .command{
 	width: calc(55vw - 36px);
 	min-height: 30px;
@@ -20,11 +41,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	padding: 10px;
 	border-radius: 5px;
 	word-spacing: 4px;
-
-
 }
+.red{
+	color:red;
+}
+.note{
+border-left: 5px solid blue;
+margin:10px 0;	
+}
+.warning{
+border-left: 5px solid orange;
+margin:10px 0;	
+}
+
 @media screen and (max-width: 592px){
-	body{
-		max-width: calc(100vw - 20px);
+	
+	#header{
+		position: fixed;
+		top:0;
+		left: 0;
+		z-index: 999;
+		height:65px;
 	}
+	.menu-container{
+		display: none;
+	}
+	.content-container{
+	width: calc(100vw - 40px);
+	padding: 0 20px;
+	margin-top: 65px;
+}
 }

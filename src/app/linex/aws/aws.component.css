@@ -1,7 +1,4 @@
-.aws-container{
-	max-width: calc( 100vw - 15px );
-	padding:15px;
-}
+
 .aws-container > p{
 	text-align: justify;
 	justify-content: space-between;

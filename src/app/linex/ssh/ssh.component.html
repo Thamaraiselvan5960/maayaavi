@@ -1,0 +1,177 @@
+<div class="ssh-container">
+  <div class="menu-container">
+    
+  </div>
+  <div class="content-container">
+	<mat-toolbar>Agenda</mat-toolbar>
+	<mat-card>
+		<li>What is SSH?</li>
+		<li>Types</li>
+		<li>SSH key Method</li>
+	</mat-card>
+	<mat-toolbar>What is SSH?</mat-toolbar>
+	
+
+<div>
+	<p>In this tutorial we’ll build a cross-platform desktop application with Electron and web technologies such as TypeScript and Angular.</p>
+	<p>Electron.js is a popular platform for building cross-platform desktop apps for Windows, Linux and macOS with JavaScript, HTML, and CSS. It’s created and maintained by GitHub and it’s available under the MIT permissive license. It was initially created for GitHub’s Atom editor, but has since been used to create applications by companies like Microsoft (Visual Studio Code), Facebook, Slack, and Docker.</p>
+	<p>Electron makes use of powerful platforms like Google Chromium and Node.js, but also provides its own set of rich APIs for interacting with the underlying operating system.</p>
+
+	<p>Electron provides a native container that wraps web apps so they look and feel like desktop apps with access to operating system features (similar to Cordova for mobile apps). This means we can use any JavaScript library or framework to build our application. In this tutorial, we’ll be using Angular.</p>
+<mat-toolbar>Prerequisites</mat-toolbar>
+<p>For this tutorial, you will need to have these prerequisites covered:
+
+Familiarity with TypeScript and Angular.
+Node.js and npm installed on your development machine.</p>
+
+<mat-toolbar>Installing Angular CLI</mat-toolbar>
+In this tutorial, we'll learn how to easily integrate Angular 10/9 with Electron to build cross-platform desktop apps with the most powerful web technologies.
+
+You will need to have recent versions of Node and NPM installed on your machine and you'll also need Angular CLI 10 for creating the Angular project.
+
+Creating an Angular 10 Project
+Let's start by creating an Angular 10 project. Open a new terminal and run the following command:
+
+$ ng new angular-10-electron-demo
+You'll be prompted for a couple questions about the routing and stylesheets format. You can choose the convenient answers for your project. Both answers won't actually affect how we integrate Electron with Angular 10.
+
+You optionally can see you app up and running in a web browser by executing the following commands:
+
+$ cd angular-10-electron-demo
+$ ng serve
+Next, simply go to the http://localhost:4200 address.
+
+Electron + Angular 10
+
+Now, let's see how we can integrate this app with Electron.
+
+Installing Electron in your Angular 10 Project
+Make sure you are inside your Angular 10 project and run the following command to install Electron as a development dependency:
+
+$ cd angular-electron-demo
+$ npm install --save-dev electron@latest
+Creating the Electron App
+Next, create a main.js file in your project and add the following code:
+
+<!-- const {app, BrowserWindow} = require('electron')
+    const url = require("url");
+    const path = require("path");
+
+    let mainWindow
+
+    function createWindow () {
+      mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+          nodeIntegration: true
+        }
+      })
+
+      mainWindow.loadURL(
+        url.format({
+          pathname: path.join(__dirname, `/dist/index.html`),
+          protocol: "file:",
+          slashes: true
+        })
+      );
+      // Open the DevTools.
+      mainWindow.webContents.openDevTools()
+
+      mainWindow.on('closed', function () {
+        mainWindow = null
+      })
+    }
+
+    app.on('ready', createWindow)
+
+    app.on('window-all-closed', function () {
+      if (process.platform !== 'darwin') app.quit()
+    })
+
+    app.on('activate', function () {
+      if (mainWindow === null) createWindow()
+    }) -->
+We create a GUI window using BrowserWindow and load the index.html file, using the loadURL() method, that will be available in the dist folder which will be created after building our Angular project.
+
+Go to the angular.json file in your project's folder, and change the value of the projects → architect → build → options → outputPath key from dist/angular-electron-demo to just dist:
+
+      <!-- "projects": {
+        "electron-angular-10-demo": {
+          "root": "",
+          "sourceRoot": "src",
+          "projectType": "application",
+          "prefix": "app",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist", --> 
+This will make sure the compiled files will be copied under the dist folder instead of a subfolder.
+
+Next, in the package.json file, add the main key with the value set to main.js:
+
+   <!--  {
+      "name": "angular-10-electron-demo",
+      "version": "0.0.0",
+      "main": "main.js",
+      // [...]
+    } -->
+Integrating Angular 10 & Electron
+Next, add a script for conveniently starting the Electron app after building the Angular 10 project:
+
+   <!--  {
+      "name": "angular-electron-demo",
+      "version": "0.0.0",
+      "main": "main.js",
+      "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e",
+        "start:electron": "ng build --base-href ./ && electron ."
+      }, 
+      // [...]
+    } -->
+
+Now, we can use the start:electron script to execute the ng build --base-href ./ && electron . which first builds the project and then run electron from the current folder.
+
+Go back to your terminal and run:
+
+$ npm run start:electron
+Your app should be compiled and started as the following screenshot:
+
+Electron + Angular 10
+
+Solving the "Failed to load module script" Issue with Angular 10
+If you are using the latest Angular 10 version, your Electron app will be started but without the Angular app due to a Failed to load module script error:
+
+This is because Angular 8+ uses differential loading which basically means we'll get two builds, a modern es2015 build and an ES5 legacy build. The web browser will load the right build based on its capabilities.
+
+You can solve this issue in many ways by telling the TypeScript compiler to output a legacy ES5 build.
+
+Go to the tsconfig.json file and simply update the target key from es2015 to es5:
+
+<!-- {
+  "compilerOptions": {
+    "target": "es5",
+} -->
+That's it. This should resolve the problem and load the Angular 8 app inside the Electron container.
+
+Conclusion
+In this quick tutorial, we've seen how to integrate Angular 10 with Electron.
+<mat-card>
+	<p class="command">npm install electron-packager -g</p>	
+	<p class="command">npm install electron-packager -D</p>
+	<p>For win 32</p>
+	<p class="command">electron-packager . --platform=win32</p>
+	<p>For max-os</p>
+	<p class="command">electron-packager . --platform=darwin</p>
+
+</mat-card>
+<p class="command"></p>
+</div>
+</div>
