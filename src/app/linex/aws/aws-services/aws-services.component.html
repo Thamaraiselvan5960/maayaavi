@@ -1,0 +1,100 @@
+<div class="content-container">
+	<div class="aws-service" style="display: none;">
+		<mat-card >
+			<h1>Static</h1>
+			<ul>
+				<li><a href="#"> CloudFront</a></li>
+				<li><a href="#"> S3</a></li>
+			</ul>
+		</mat-card>
+
+		<mat-card>
+			<h1>Hosting</h1>
+			<ul>
+				<li><a href="#"> Route 53</a></li>		
+			</ul>
+		</mat-card>
+
+		<mat-card>
+			<h1>API Hosting</h1>
+			<ul>
+				<li><a href="#"> API Gateway + Amazon Lambda</a></li>
+				<li><a href="#"> Loadbalencer + Amazon EC2</a></li>
+				<li><a href="#"> Loadbalencer + Amazon ECS</a></li>
+			</ul>
+		</mat-card>
+
+		<mat-card>
+			<h1>Database</h1>
+			<ul>
+				<li><a href="#"> RDS</a></li>
+				<li><a href="#"> Redshift</a></li>
+				<li><a href="#"> DynamoDB</a></li>
+				<li><a href="#"> Neptune</a></li>
+				<li><a href="#"> ElasticCache</a></li>
+			</ul>
+		</mat-card>
+
+		<mat-card>
+			<h1>Application Orchestration</h1>
+			<ul>
+				<li><a href="#"> SNS</a></li>
+				<li><a href="#"> SQS</a></li>
+				<li><a href="#"> Step Functions</a></li>
+			</ul>
+		</mat-card>
+
+		<mat-card>
+			<h1>Analysis, Big Data, ML</h1>
+			<ul>
+				<li><a href="#"> Athena</a></li>
+				<li><a href="#"> EMR</a></li>
+				<li><a href="#"> Sagemaker</a></li>
+				<li><a href="#"> Quick Sight</a></li>
+			</ul>
+		</mat-card>
+
+		<mat-card>
+			<h1>Security</h1>
+			<ul>
+				<li><a href="#"> VPC</a></li>
+				<li><a href="IAM" > Identity and Access Management</a></li>
+			</ul>
+		</mat-card>
+
+		<mat-card>
+			<h1>Monitoring</h1>
+			<ul>
+				<li><a href="#">CloudWatch</a></li>
+				<li><a href="#">CloudTrail</a></li>
+			</ul>
+		</mat-card>
+	</div>
+
+	<div id="IAM">
+		<h1>IAM</h1>
+		<p>IAM allows you to manage users and their level of access to the AWS console.Its important to understand  OAM and how it works, both for the exam and for adminstrating a company's AWS account in real life.</p>
+		<p>IAM used to Set up Users, groups, permissions, roles and grant access for various resources of AWS.</p>
+		<h3>Features</h3>
+		<ul>
+			<li>Centralised control of your AWS account</li>
+			<li>Shared account of your AWS account.</li>
+			<li>Granular Permissions</li>
+			<li>Identity Federation (including Active Directory, Facebook,Linkedin etc)</li>
+			<li>Multifactor Authentication</li>
+			<li>provide temprory access for users/devices and services where necessary</li>
+			<li>Allows you to setup your own password rotation policy</li>
+			<li>Integrates with many differnrt AWS services</li>
+			<li>Supports PCI DSS Compliances</li>
+		</ul>
+		<h3>Users</h3>
+		<p>End users such as peoples, employees of an organization etc.</p>
+		<h3>Groups</h3>
+		<p>A collection of users.Each user in the group will inherit the permissions of the group.</p>
+		<h3>Policies</h3>
+		<p>Policies are made up of documents, called policy documents.these documents are in a format called JSON and they give permissions as to what a User/Group/Role is able to do.</p>
+		<h3>Roles</h3>
+		<p>You create a role and then assign them into AWS resources</p>
+	</div>
+	
+</div>

@@ -1,7 +1,9 @@
 <div class="aws-container">
 	<div class="menu-container">
-		<a routerLink="awsintro" (click)="content='intro'">Introduction</a><br>
-		<a routerLink="awsssh" (click)="content='ssh'">SSH login</a><br>
+		
+		<a routerLink="awsintro" (click)="content='intro'">Introduction</a>
+		<a routerLink="awsssh" (click)="content='ssh'"> SSH login</a>
+		<a routerLink="aws-services" (click)="content='services'">AWS Services</a>
 	</div>
 	<div class="content-container">
 
@@ -9,5 +11,9 @@
 		
 		<app-awsssh-login *ngIf="content== 'ssh' "></app-awsssh-login>
 		
+		<app-aws-services *ngIf="content == 'intro' "></app-aws-services>
 	</div>	
+	<div class="side-container">
+		
+	</div>
 </div>

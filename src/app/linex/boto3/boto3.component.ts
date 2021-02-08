@@ -7,11 +7,12 @@ import { HighlighterService } from '../../service/prism/highlighter.service';
   styleUrls: ['./boto3.component.css']
 })
 export class Boto3Component implements OnInit {
-
+  content = 'intro'
 	botoinstall = "<pre><code class='language-markup'>pip install boto3</code></pre>"
 	credentials = "<pre><code class='language-markup'>[default]\naws_access_key_id = YOUR_ACCESS_KEY\naws_secret_access_key = YOUR_SECRET_KEY</code></pre>"
 	location = "<pre><code class='language-markup'>[default]\nregion = us-east-1</code></pre>"
-	tree = "<pre><code class='language-markup'>.aws --> folder name\n |--credentials -->filename without any extension \n |--config -->filename without any extension</code></pre>"
+  
+  
     constructor(private highlightService: HighlighterService) { }
 
     private highlighted: boolean = false;

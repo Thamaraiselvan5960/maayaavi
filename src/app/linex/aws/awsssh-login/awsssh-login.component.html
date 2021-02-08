@@ -1,7 +1,5 @@
 <div class="ssh-login">
-	<div class="menu-container">
-		
-	</div>
+
 	<div class="content-container">
 		<mat-toolbar>Agenda</mat-toolbar>
 		<mat-toolbar>SSH Configuration in PC</mat-toolbar>
@@ -21,12 +19,15 @@
 		<p class="command">sudo ufw status</p>
 		<p>To switch user to root use below command.</p>
 		<p class="command">sudo su</p>
-		<p>Below command will change firewall state to <b>active.</b></p>
-		<p class="command">ufw enable</p>
+		
+
 		<p>Then Press <b>y</b> to continue.</p>
 		<p>Below two commands will enable port 80 and 443.</p>
+		<p class="command">ufw allow OpenSSH</p>
 		<p class="command">ufw allow http</p>
 		<p class="command">ufw allow https</p>
+		<p>Below command will change firewall state to <b>active.</b></p>
+		<p class="command">ufw enable</p>
 		<p>Use following command to know http and https permission activation status.</p>
 		<p class="command">ufw status</p>
 		<p>Use this command to logout from linux.</p>
@@ -35,6 +36,7 @@
 		<mat-toolbar>Execute a Simple Application in python</mat-toolbar>
 		<p>Use this command to login to your linux.</p>
 		<p class="command">ssh -i tomtheevilcat.pem ubuntu@ec2-18-188-44-210.us-east-2.compute.amazonaws.com</p>
+		<div [innerHTML]='pip3'></div>
 		<p>Check python is available by put this command</p>
 		<p class="command"> sudo python3</p>
 		<p class="command">pip3</p>

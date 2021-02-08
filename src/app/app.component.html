@@ -1,155 +1,40 @@
-<!-- for mobile -->
-<mat-drawer-container class="example-container" hasBackdrop="'true'">
-     <mat-drawer #drawer [mode]="mode">
-       <button mat-button [matMenuTriggerFor]='courses'>
-                Tutorials
-            </button>
-            <mat-menu #courses="matMenu" yPosition="below">
-                <button mat-button routerLink="devcolor">
-                    Python
-                </button>
-                
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='fordevelopper'>
-                For Developpers
-            </button>
-            <mat-menu #fordevelopper="matMenu" yPosition="below">
-                <button mat-button routerLink="devcolor">
-                    About Background colors
-                </button>
-                <button mat-button routerLink="prism">
-                    Prismjs
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='os'>
-                OS
-            </button>
-            <mat-menu #os="matMenu" yPosition="below">
-                <button mat-button routerLink="linux">
-                   linux OS Commands
-                </button>
-            </mat-menu> 
-            <button mat-button [matMenuTriggerFor]='git'>
-                Git/version Control System
-            </button>
-            <mat-menu #git="matMenu" yPosition="below">
-                <button mat-button routerLink="git">
-                   About Git Commands
-                </button>
-            </mat-menu> 
-            <button mat-button [matMenuTriggerFor]='aws'>
-                AWS
-            </button>
-            <mat-menu #aws="matMenu" yPosition="below">
-                <button mat-button routerLink="aws">
-                   Register SSH in PC
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='ssh'>
-                SSH
-            </button>
-            <mat-menu #ssh="matMenu" yPosition="below">
-                <button mat-button routerLink="ssh">
-                   SSH
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='electron'>
-                ElectronJs
-            </button>
-            <mat-menu #electron="matMenu" yPosition="below">
-                <button mat-button routerLink="electronjs">
-                   Electron Intro
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='boto'>
-                Boto3
-            </button>
-            <mat-menu #boto="matMenu" yPosition="below">
-                <button mat-button routerLink="boto3">
-                   Boto3 Intro
-                </button>
-            </mat-menu>
-    </mat-drawer>
-<!-- main container -->
-    <mat-drawer-content>
-        <mat-toolbar [style.background-color] = "primary" id="header">
-            <a routerLink=''>
-                Welcome To {{ title }}
-            </a>
-            <button mat-raised-button (click)="drawer.toggle()" id="small-screen">
-                Toggle drawer
-            </button>
-        </mat-toolbar>
-        <mat-toolbar [style.background-color] = "secondary" id="large-screen">
+<mat-toolbar  id="header">
+    <h1 class="title" ><a routerLink=''> {{ title }}</a></h1>
+    <button onclick = 'show("show")'   id="small-screen">menu</button>
 
-            <button mat-button [matMenuTriggerFor]='courses'>
-                Tutorials
-            </button>
-            <mat-menu #courses="matMenu" yPosition="below">
-                <button mat-button routerLink="devcolor">
-                    Pythons
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='fordevelopper'>
-                For Developpers
-            </button>
-            <mat-menu #fordevelopper="matMenu" yPosition="below">
-                <button mat-button routerLink="devcolor">
-                    Choose Right Backgrounds
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='os'>
-                OS
-            </button>
-            <mat-menu #os="matMenu" yPosition="below">
-                <button mat-button routerLink="linux">
-                   linux OS Commands
-                </button>
-            </mat-menu> 
-             <button mat-button [matMenuTriggerFor]='git'>
-               Git/Version Controller
-            </button>
-            <mat-menu #git="matMenu" yPosition="below">
-                <button mat-button routerLink="git">
-                   About Git Commands
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='aws'>
-                AWS
-            </button>
-            <mat-menu #aws="matMenu" yPosition="below">
-                <button mat-button routerLink="aws">
-                   Register SSH in PC
-                </button>
-            </mat-menu>
-             <button mat-button [matMenuTriggerFor]='ssh'>
-                SSH
-            </button>
-            <mat-menu #ssh="matMenu" yPosition="below">
-                <button mat-button routerLink="ssh">
-                   SSH
-                </button>
-            </mat-menu> 
-            <button mat-button [matMenuTriggerFor]='electron'>
-                ElectronJs
-            </button>
-            <mat-menu #electron="matMenu" yPosition="below">
-                <button mat-button routerLink="electronjs">
-                   Electron Intro
-                </button>
-            </mat-menu>
-            <button mat-button [matMenuTriggerFor]='boto'>
-                Boto3
-            </button>
-            <mat-menu #boto="matMenu" yPosition="below">
-                <button mat-button routerLink="boto3">
-                   Boto3 Intro
-                </button>
-            </mat-menu>
-        </mat-toolbar>
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
+    <div class="sm-container" id="menu" onclick = 'show("hide")'> <!-- this is for background of side nav -->
+    <div class="small-menu">
+    	<span onclick = 'show("hide")' class="close">&#10005;</span>
+       		<div id="nav" >
+       			<app-nav></app-nav>
+       		</div>
+    </div>
+    
+</div>
+</mat-toolbar>
 
-</mat-drawer-container>
+<div class="big-screen" >
+	<app-nav></app-nav>
+</div>
+<section>
+  <router-outlet></router-outlet>
+</section>
 
-
+<footer>
+  <div class="footer-container">
+    <div class="popular-course">
+      <h2>Popular courses</h2>
+      <a href="#">python</a>
+      <a href="#">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JavaScript</a>
+    </div>
+    <div class="contact-us">
+      <h2>Contact Us</h2>
+      <a href="#">Leave a mail</a>
+      <a href="#">About Us</a>
+    </div>
+    
+  </div>
+            
+</footer>

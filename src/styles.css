@@ -2,37 +2,138 @@
 @import "~prismjs/themes/prism-okaidia";
 
 /* You can add global styles to this file, and also import other style files */
-*{
+*,
+*::before,
+*::after{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-a{
-	text-decoration: none;
-}
-h1{
-	
-}
-html, body { 
-	overflow-x: hidden;
-	min-height: 100vh;
-}
-body { 
-	margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-}
-.aws-container, .theme-container, .git-container, .linux-container, 
-.electronjs-container, .prism-container, .ssh-container, .boto3-container{
-	display: flex;
-}
-.menu-container{
-	width: 20vw;
-	background: #dadfea;
-}
-.content-container{
-	width: calc(80vw - 60px);
-	padding: 0px 30px;
+
+:root{
+	/*text color*/
+	--text-highlight:;
+	--text-normal:#fff;
+	--text-heading:blue;
+	--text-hint:;
+	--text-link:#fff;
+
+
+	/*background*/
+	--clr-header-bg:linear-gradient(#000, #000 );
+	--clr-footer-bg:;
+	--clr-button:#ffc107;
+	--clr-navbar:rgb(78 78 78 / 37%);
+	--clr-body-bg:rgba(0,0,0,0.99);
+
+	/*font family*/
+	--ff-title:;
+	--ff-text:;
+	--ff-link:'georgia', 'garamond';
+
+	--box-outset: inset 3px 3px 10px rgba(255,255,255,0.6), 3px 3px 10px rgba(0,0,0,0.6);
+	--outline:1px solid rgba(255,255,255,0.4);
+
 }
 
+html, body { 
+	font-family: Roboto, "Helvetica Neue", sans-serif; 
+	font-size:16px ;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: Roboto,Arial,sans-serif ;
+	font-size: 1.6rem;
+	margin-bottom: ;
+	font-weight: ;
+	color:var(--text-normal);
+}
+p,li{
+	font-family: georgia, garamond ;
+	line-height: 1.5;
+	font-size: 18px;
+	color:var(--text-normal);
+}
+a{
+	text-decoration: none;
+	color: var(--text-link);
+	font-family: var(--ff-link);
+	font-size: 18px;
+}
+body { 
+	margin: 0; 
+	position: relative;
+	background-color: var(--clr-body-bg)
+}
+section{
+	background-color: var(--clr-body-bg);
+}
+mat-toolbar{
+	background-color: var(--clr-primary)!important;
+}
+button{
+	background-color: var(--clr-button)!important;
+	padding: 0.8em 1.6em;
+	border-radius: 0.45em;
+	outline: none;
+	border:none;
+	box-shadow: inset 3px 3px 10px rgba(255,255,255,0.6), 3px 3px 10px rgba(0,0,0,0.6);
+}
+
+/*custom cards*/
+.s-card{
+	border-radius: 1rem;
+	background-color: rgba(0,0,0,0.8);
+	box-shadow: -3px -3px 5px rgba(255,255,255,0.4), 3px 3px 5px rgba(0,0,0,0,1);
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: rgba(0,0,0,0.6);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--clr-button);
+	border-radius: 10px;
+}
+
+::-moz-scrollbar {
+	width: 5px;
+	background-color: rgba(0,0,0,0.6);
+}
+::-moz-scrollbar-thumb {
+	background-color: var(--clr-button);
+	border-radius: 10px;
+}
+
+
+.m{
+	margin: 1rem;
+}
+.m-2{
+	margin: 2rem;
+}
+.m-lr{
+	margin: 0 1rem;
+}
+.m-tb{
+	margin: 0 2rem;
+}
+
+.p{
+	padding: 1rem;
+}
+.p-2{
+	padding: 2rem;
+}
+.p-lr{
+	padding: 0 1rem;
+}
+.p-tb{
+	padding: 0 2rem;
+}
+
+
+/*alert box*/
 .command{
 	width: calc(55vw - 36px);
 	min-height: 30px;
@@ -53,22 +154,178 @@ margin:10px 0;
 border-left: 5px solid orange;
 margin:10px 0;	
 }
+.alert{
+border-left: 5px solid red;
+margin:10px 0;	
+background: rgba(255,0,0,0.4);
+}
+
+
+
+
+
+
+/*container style*/
+#header{
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	background: var(--clr-header-bg);
+	border-bottom: var(--outline);
+}
+.title a{
+	font-size: 2.25rem;
+	text-align: center;
+	display: block;
+}
+app-nav{
+	background-color: var(--clr-navbar);
+}
+#small-screen{
+	display: none;
+}
+#large-screen{
+	display: block;
+}
+
+#menu{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index:999;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.5);
+}
+.small-menu{
+	height: 100vh;
+	width: 40vw;
+	padding: 10px;
+	background-color: #dadfea;
+	transition-duration: 3s;
+	display: block;
+	position: relative;
+}
+.small-menu > *:nth-child(1){
+	position: absolute;
+	top:10px;
+	right: 10px;
+	z-index: 3;
+	cursor: pointer;
+}
+.small-menu > *:nth-child(2){
+	height: 100vh;
+	position: absolute;
+}
+.big-screen{
+	display: block;
+	background-color: var(--clr-navbar);
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+
+.aws-container, .theme-container, .git-container, .linux-container, 
+.electronjs-container, .prism-container, .ssh-container, .boto3-container, .python-container{
+	display: flex;
+}
+.menu-container{
+	flex: 1 1 10%;
+	position: sticky;
+	position: -webkit-sticky;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	
+}
+.menu-container a{
+	display: block;
+	text-align: left;
+	font-size: 17px;
+	padding: 0.8em 1em;
+}
+
+.content-container{
+	flex:1 1 calc(75vw - 60px);
+	padding: 0px 30px;
+	min-height: 150vh;
+	border-left:var(--outline);
+	border-right:var(--outline);
+}
+.side-container{
+	flex:1 1 15% ;
+}
+
+
+/*footer*/
+footer{
+	background-color: blue;
+	min-height: 350px;
+	width:100%;
+}
+footer a{
+	color:orange;
+	font-size: 1.5em;
+    margin-bottom: .5em;
+}
+.footer-container{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+.popular-course, .contact-us{
+	width: 33%;
+	padding: 1em;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+
+
 
 @media screen and (max-width: 592px){
-	
+	:root{
+		--clr-header-bg:linear-gradient( 90deg, #045de9, #09c6f9);
+	}
 	#header{
 		position: fixed;
 		top:0;
 		left: 0;
 		z-index: 999;
 		height:65px;
+		background-image: var(--clr-header-bg);
+	}
+	.aws-container, .theme-container, .git-container, .linux-container, 
+.electronjs-container, .prism-container, .ssh-container, .boto3-container, .python-container{
+		flex-direction: column;
 	}
 	.menu-container{
 		display: none;
 	}
 	.content-container{
-	width: calc(100vw - 40px);
-	padding: 0 20px;
-	margin-top: 65px;
+		width: calc(100vw - 40px);
+		padding: 0 20px;
+		margin-top: 65px;
+	}
+	.side-content{
+
+	}
+	#small-screen{
+		display: block;
+	}
+	#large-screen ul{
+		flex-direction: column;
+		position: absolute;
+    	top: 0vh;
+	}
+	.big-screen{
+		display: none;
+	}
+
 }
+
+@media screen and (max-width: 992px){
+
 }

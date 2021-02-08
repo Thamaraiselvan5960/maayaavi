@@ -22,8 +22,13 @@ import { ThemeComponent } from './theme/theme.component';
 import { Boto3Component } from './boto3/boto3.component';
 import { AwsintroComponent } from './aws/awsintro/awsintro.component';
 import { AwssshLoginComponent } from './aws/awsssh-login/awsssh-login.component';
+import { BotoS3Component } from './boto3/boto-s3/boto-s3.component';
+import { BotoEc2Component } from './boto3/boto-ec2/boto-ec2.component';
+import { AwsServicesComponent } from './aws/aws-services/aws-services.component';
+import { AwsSecurityComponent } from './aws/aws-security/aws-security.component';
+import { LaptopComponent } from './laptop/laptop.component';
 @NgModule({
-  declarations: [LinuxcommandsComponent, GitcommandsComponent, AwsComponent, SshComponent, PrismComponent, ElectronjsComponent, ThemeComponent, Boto3Component, AwsintroComponent, AwssshLoginComponent],
+  declarations: [LinuxcommandsComponent, GitcommandsComponent, AwsComponent, SshComponent, PrismComponent, ElectronjsComponent, ThemeComponent, Boto3Component, AwsintroComponent, AwssshLoginComponent, BotoS3Component, BotoEc2Component, AwsServicesComponent, AwsSecurityComponent, LaptopComponent],
   imports: [
 	  CommonModule, MatButtonModule, MatToolbarModule, MatCardModule, MatSidenavModule, MatFormFieldModule,
 	  MatInputModule, FormsModule, MatChipsModule

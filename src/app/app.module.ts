@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { AppNav } from './app.component'
 import { LinexModule } from './linex/linex.module';
+import { CourseModule } from './course/course.module';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,10 +28,11 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNav,
   ],
  imports: [
-	 BrowserModule, AppRoutingModule, LinexModule,
+	 BrowserModule, AppRoutingModule, LinexModule,CourseModule,
 	MatGridListModule,
 	MatButtonModule,
 	MatToolbarModule,

@@ -1,8 +1,18 @@
-<div class="sub-container">
+<div class="content-container">
 	<h1>What is AWS?</h1>
 	<p>Amazon Web Services(AWS) is a cloud service from Amazon, which provides services in the form of building blocks, these building blocks can be used to create and deploy any type of application in the cloud.</p>
 	<h1>What is Amazon AWS used for?</h1>
 	<p>Amazon Web Services (AWS) is a secure cloud services platform, offering compute power, database storage, content delivery and other functionality to help businesses scale and grow. Running web and application servers in the cloud to host dynamic websites.</p>
+	<h1>AWS Services</h1>
+	<ul>
+		<li>Compute</li>
+		<li>Security & Identity</li>
+		<li>Storage</li>
+		<li>Databases</li>
+		<li>Networking and Content Delivery</li>
+		<li>Management tools</li>
+		<li>AWS Global Infrastructure</li>
+	</ul>
 	<mat-card class="warning">
 		<h1>WHERE TO START LEARNING AWS?</h1>
 		<p>The three areas you should focus on when starting AWS are:</p>
@@ -14,7 +24,31 @@
 	<p>First Learn one service in aws.Then you can easily understand other services easily.here is the most commonly used service in AWS.</p>
 	<h1>ECS</h1>
 	<p>ECS runs your containers on a cluster of Amazon EC2 (Elastic Compute Cloud) virtual machine instances pre-installed with Docker. It handles installing containers, scaling, monitoring, and managing these instances through both an API and the AWS Management Console</p>
-	<p>The core services are: EC2, IAM and S3.</p>
+	<p>The core services are: EC2, Root/IAM and S3.</p>
+	<h1>EC2</h1>
+	<p><b>EC2 stands for Elastic Compute Cloud</b>.here you create An instance,it's nothing but a virtual server in the AWS cloud. With Amazon EC2, you can set up and configure the operating system and applications that run on your instance.<b>In other words</b> its a computer comes with pre-loaded os,SSD and more options.The only thing is you have to select, which package is suitable for your application.for example in test purpose most developpers select free tire eligile servers.</p>
+	<h1>Creating an EC2 instance</h1>
+	<p>Choose an availability zone yourself else AWS will set availability zone by default as <b>us-west-1</b></p>
+	<mat-card class="warning">
+		<h3><b>Warning</b></h3>
+		<p>Don't select Proceed without a key pair. If you launch your instance without a key pair, then you can't connect to it.</p>
+	</mat-card>
+	<h1>IAM</h1>
+	<p> IAM user accounts are user accounts which you can create for individual services offered by AWS.</p>
+	<p>Assume this scenario, you are the CEO of a product company and you signup for AWS providing your mail address, card and billing details and you have developers working for you, developing apps, deploying them in AWS. You cannot share your AWS account(your root credentials), which you just created, to your developer or devops and ask them to deploy apps. This is a huge security risk for you. Instead you create IAM users, attach group level policies or user level policies and share these IAM accounts with them. Group level and user level policies restrict and authorize individual IAM users to AWS services under your user account. It is extremely important that you understand and make use of IAM for your AWS account</p>
+	<h1>S3</h1>
+	<p><b>Bucket names are universally unique.you or anyone can't create a bucket with a name of already existing bucket name.</b></p>
+	<p>An Amazon S3 bucket is a public cloud storage resource available in Amazon Web Services' (AWS) Simple Storage Service (S3), an object storage offering. Amazon S3 buckets, which are similar to file folders, store objects, which consist of data and its descriptive metadata.</p>
+	<p>To upload your data (photos, videos, documents etc.) to Amazon S3, you must first create an S3 bucket in one of the AWS Regions. This means that <b>after a bucket is created, the name of that bucket cannot be used by another AWS account in any AWS Region until the bucket is deleted.</b></p>
+	<h1>Why S3?</h1>
+	<p>Amazon S3 has a simple web services interface that you can use to store and retrieve any amount of data, at any time, from anywhere on the web. It gives any developer access to the same highly scalable, reliable, fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites.</p>
+
+
+
+
+
+
+
 	<mat-card class="warning">
 		<p>WHAT OTHER AWS SERVICES SHOULD YOU KEEP AN EYE ON?</p>
 		<li><b>CloudWatch</b> — The built-in AWS monitoring tool.</li>
@@ -30,9 +64,54 @@
 		<li>MFA, and how it protects your account from getting hacked.</li>
 		<li>Infrastructure As Code, and how it makes your hands-on learning easier.</li>
 	</mat-card>
-	<h1>THE ROOT ACCOUNT</h1>
+	
 	<h1>AWS CREDENTIALS AND ACCESS</h1>
-	<h1>MFA</h1>
+	<p>AWS requires different types of security credentials depending on how you access AWS.<br>1. You need username and password to sign in to AWS Management Console.<br>2. You need access keys to make programatical calls to AWS or to use to the AWS CLI or AWS tool for powershell.</p>
+	<mat-card class="alert">
+		<h1>Considerations</h1>
+		<li>Ensure that you AWS username,password, Secret access keys are stored in safe place.because if you forget or lost these credentials, You can't recover it.For security reasons, AWS doesn't provide the means for you or anyone else to retrieve your credentials. </li>
+		<li>We strongly recommend that you create an IAM user with administrator permissions to use for everyday AWS tasks and lock away the password and access keys for the root user. Use the root user only for the tasks that are restricted to the root user.</li>
+
+		<li>Security credentials are account-specific. If you have access to multiple AWS accounts, you have separate credentials for each account.</li>
+
+		<li>Do not provide your AWS credentials to a third party.</li>
+	</mat-card>
+	<h1>Credentials</h1>
+	<p>1.Console access</p>
+	<p>2.Programmatic access</p>
+	<p>3.Temporary access keys</p>
+
+	<h1>Console access</h1>
+	<p>Two types of users in AWS.<br>1.Root User(Account Owner)<br>2. AWS Identity and Access Management (IAM) user (employees like developper...)</p>
+	<h1>Contents</h1>
+	<ul>
+		<li>Root user</li>
+		<li>IAM</li>
+		<li>Multi-factor authentication (MFA)</li>
+	</ul>
+	<h1>Root</h1>
+	<p>It's the Master Control of your AWS account.This Root user account will be created while signin process.By default using this account you can manage billing details, access all aws services without and restriction.cost may vary, based on which service you are going to use.and one more thing through this account you can create IAM users. Then you can provide those accounts to your team for further development and other maintanance purpose.</p>
+	<h1>IAM</h1>
+	<p>AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.</p>
+
+	<p>IAM is a feature of your AWS account offered at no additional charge. You will be charged only for use of other AWS services by your users</p>
+
+	<h1>Multi-factor authentication (MFA)</h1>
+	<p> AWS Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of your user name and password. With MFA enabled, when a user signs in to an AWS Management Console, they will be prompted for their user name and password (the first factor—what they know), as well as for an authentication code from their AWS MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for your AWS account settings and resources.</p>
+
+	<p>You can enable MFA for your AWS account and for individual IAM users you have created under your account. MFA can be also be used to control access to AWS service APIs.</p>
+
+	<h1>Programmatic access</h1>
+	<p>You must provide your AWS access keys to make programmatic calls to AWS or to use the AWS Command Line Interface or AWS Tools for PowerShell</p>
+	<p>When you create your access keys, you create the access key ID (for example, AKIAIOSFODNN7EXAMPLE) and secret access key (for example, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY) as a set. The secret access key is available for download only when you create it. If you don't download your secret access key or if you lose it, you must create a new one.</p>
+
+	<p>You can assign up to two access keys per user (root user or IAM user). Having two access keys is useful when you want to rotate them. When you disable an access key, you can't use it, but it counts toward your limit of two access keys. After you delete an access key, it's gone forever and can't be restored, but it can be replaced with a new access key.</p>
+	<h1>Temporary access keys</h1>
+	<p>You can also create and use temporary access keys, known as temporary security credentials. In addition to the access key ID and secret access key, temporary security credentials include a security token that you must send to AWS when you use temporary security credentials. The advantage of temporary security credentials is that they are short term. After they expire, they're no longer valid. You can use temporary access keys in less secure environments or distribute them to grant users temporary access to resources in your AWS account. For example, you can grant entities from other AWS accounts access to resources in your AWS account (cross-account access). You can also grant users who don't have AWS security credentials access to resources in your AWS account (federation). </p>
+
+	<p>If you continue to use the root user credentials, we recommend that you follow the security best practice to enable multi-factor authentication (MFA) for your account. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account. Multiple types of MFA are available.</p>
+
+
 
 	<h1>PART 3: STRUCTURE YOUR AWS LEARNING</h1>
 	<p>And the last of my three tips for today is to structure your learning. If you don’t structure your learning, you risk getting lost in a sea of details and spending more time learning unnecessary areas whilst neglecting the right ones. But how do we add that structure to our learning?</p>

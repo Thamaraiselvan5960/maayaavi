@@ -1,30 +1,35 @@
 <div class="boto3-container">
 	<div class="menu-container">
-		
+		<a (click)="content='intro'">Boto-Introduction</a>
+		<a (click)="content='s3'">Boto-S3</a>
+		<a (click)="content='ec2'">Boto-EC2</a>
 	</div>
 	<div class="content-container">
-		<mat-toolbar>Boto3 Introduction</mat-toolbar>
-		<p>Boto is the Amazon Web Services (AWS) SDK for Python. It enables Python developers to create, configure, and manage AWS services, such as EC2 and S3. Boto provides an easy to use, object-oriented API, as well as low-level access to AWS services.</p>
-		<h1>Installation</h1>
-		<div [innerHTML]="botoinstall"></div>
-		<mat-card class="note">For best results, please ensure your version of Python is up-to-date.</mat-card>
-		<h1>Configuration</h1>
-		<p>Before you can begin using Boto3, you should set up authentication credentials. Credentials for your AWS account can be found in the <a href="https://console.aws.amazon.com/iam/home">IAM Console</a>. You can create or use an existing user. Go to manage access keys and generate a new set of keys</p>
-		<h1>Why Access Key?</h1>
-		<p><b>I need an AWS access key to allow a program, script, or developer to have programmatic access to the resources on my AWS account. How do I create a new access key?</b></p>
-		<p>Alternatively, you can create the credential file yourself. By default, its location is at ~/.aws/credentials:</p>
-		<mat-card class="warning"><p> For both file Write [Default] in the first line of your config/credentials file. This will tell ConfigParser that there is only one header and that is the default. else you will get error like <span class="red">ConfigParser.MissingSectionHeaderError: File contains no section headers.</span></p></mat-card>
-		<div [innerHTML]="credentials"></div>
-		<p>You may also want to set a default region. This can be done in the configuration file. By default, its location is at ~/.aws/config:</p>
-		<div [innerHTML]="location"></div>
+		<div *ngIf = "content== 'intro' ">
+			<mat-toolbar>Boto3 Introduction</mat-toolbar>
+			<p>Boto is the Amazon Web Services (AWS) SDK for Python. It enables Python developers to create, configure, and manage AWS services, such as EC2 and S3. Boto provides an easy to use, object-oriented API, as well as low-level access to AWS services.</p>
+			<h1>Installation</h1>
+			<div [innerHTML]="botoinstall"></div>
+			<mat-card class="note">For best results, please ensure your version of Python is up-to-date.</mat-card>
+			<h1>Configuration</h1>
+			<p>Before you can begin using Boto3, you should set up authentication credentials. Credentials for your AWS account can be found in the <a href="https://console.aws.amazon.com/iam/home">IAM Console</a>. You can create or use an existing user. Go to manage access keys and generate a new set of keys</p>
+			<h1>Why Access Key?</h1>
+			<p><b>I need an AWS access key to allow a program, script, or developer to have programmatic access to the resources on my AWS account. How do I create a new access key?</b></p>
+			<p>Alternatively, you can create the credential file yourself. By default, its location is at ~/.aws/credentials:</p>
+			<mat-card class="warning"><p> For both file Write [Default] in the first line of your config/credentials file. This will tell ConfigParser that there is only one header and that is the default. else you will get error like <span class="red">ConfigParser.MissingSectionHeaderError: File contains no section headers.</span></p></mat-card>
+			<div [innerHTML]="credentials"></div>
+			<p>You may also want to set a default region. This can be done in the configuration file. By default, its location is at ~/.aws/config:</p>
+			<div [innerHTML]="location"></div>
+		</div>
+		
 
-		<p>Create a folder in your <b>C:\Users\username\.aws</b> like following one.</p>
-		<mat-card class="note">
-		<div [innerHTML]="tree"></div>
-		</mat-card>
-		<div [innerHTML]=""></div>
-
+		
+		<!-- <div [innerHTML]=""></div> -->
+		<app-boto-s3 *ngIf="content== 's3' "></app-boto-s3>
+		<app-boto-ec2 *ngIf="content== 'ec2' "></app-boto-ec2>
 
 	</div>
+	<div class="side-container">
+		
+	</div>
 </div>
-

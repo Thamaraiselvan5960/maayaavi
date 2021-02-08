@@ -9,7 +9,16 @@ export class AppComponent {
 
 	title = 'Toms tutorial';
 	mode:any = 'over';
-	primary = '#1f85de';
-	secondary = '#dadfea';
-	button = '#de781f';
+	
+	
+}
+
+@Component({
+  selector: 'app-nav',
+  templateUrl: './app.nav.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppNav {
+
+	
 }
